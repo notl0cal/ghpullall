@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO=/home/chance/
+REPO=`pwd`
 for i in `ls "$REPO/"`
 do
 	if [ -d "$REPO/$i" ]
