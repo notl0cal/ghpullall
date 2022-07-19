@@ -1,23 +1,17 @@
-#!/bin/bash
-REPO=`pwd`
-for i in `ls "$REPO/"`
-do
-	if [ -d "$REPO/$i" ]
-	then
-		if [ -d "$REPO/$i/.git" ]
-		then	
-			cd "$REPO/$i"
-			pwd
+#!/usr/bin/env bash
+SHSTASH="$HOME/bin"
+REPOSTASH=`pwd`
+for i in `ls "$REPOSTASH/"`; do
+	if [ -d "$REPOSTASH/$i" ]; then
+		if [ -d "$REPOSTASH/$i/.git" ]; then
+			cd "$REPOSTASH/$i"; pwd
+			git fetch; git status; git pull; echo "Pulling..."
 			sleep 0.5
-			git status
-			echo "Fetching..."
-			git fetch
-			sleep 0.2
-			echo "Pulling..."
-			git pull
-			sleep 0.2
-		fi
+			cp $REPOSTASH/$i/*.sh $SHSTASH/$i  2> /dev/null; echo "Copied..."
+            if [ -d "$SHSTASH/$i.sh" ]; then
+                echo "Done."
+            fi
+	    fi
 	fi
 done
-echo "Done."
 sleep 0.3
