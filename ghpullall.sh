@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 SHSTASH="$HOME/bin"
-REPOSTASH=`pwd`
+REPOSTASH="$HOME/archives"
 for i in `ls "$REPOSTASH/"`; do
 	if [ -d "$REPOSTASH/$i" ]; then
 		if [ -d "$REPOSTASH/$i/.git" ]; then
