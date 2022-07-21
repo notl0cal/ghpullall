@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-SHSTASH="$HOME/bin"
-REPOSTASH="$HOME/archives"
+source $HOME/ghpullall/config.sh
 for i in `ls "$REPOSTASH/"`; do
 	if [ -d "$REPOSTASH/$i" ]; then
 		if [ -d "$REPOSTASH/$i/.git" ]; then
