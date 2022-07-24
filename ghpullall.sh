@@ -6,7 +6,7 @@ for i in `ls "$REPOSTASH/"`; do
 			cd "$REPOSTASH/$i"; pwd
 			git fetch; git status; echo "Pulling..."; git pull
 			sleep 0.5
-			cp $REPOSTASH/$i/*.sh $SHSTASH/$i  2> /dev/null
+			cp "$REPOSTASH/$i/"*.sh "$SHSTASH/$i" 2> /dev/null
            	if [ -f "/home/chance/bin/$i" ]; then
                 echo "Stashed.."
             fi
